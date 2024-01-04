@@ -1,0 +1,11 @@
+./models/__pycache__/
+./.vscode
+./models/engine/__pycache__/
+*.pyc
+*~
+*.swp
+**/__pycache__/**
+**.json
+*.json
+output.json
+node.js
