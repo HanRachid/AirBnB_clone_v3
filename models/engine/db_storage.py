@@ -80,7 +80,7 @@ class DBStorage:
 
     def get(self, cls, id):
         """get an instance using id and cls"""
-        return self.__session.get(classes[cls], id)
+        return self.__session.get(cls, id)
 
     def count(self, cls=None):
         """get count of all objects of class"""
