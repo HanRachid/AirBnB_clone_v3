@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""our routes are defined here
+"""
 from api.v1.views import app_views
 
 

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""starting point of our app
+"""
 from flask import Flask
 from models import storage
 from api.v1.views import app_views
