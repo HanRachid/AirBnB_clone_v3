@@ -19,7 +19,7 @@ def get_all_cities(state_id):
     try:
         city_list = []
         state_list = storage.all('City')
-        for key, value in stateinfo.items():
+        for key, value in state_list.items():
             city_dict = value.to_dict()
             if city_dict.get('state_id') == state_id:
                 city_list.append(city_dict)
