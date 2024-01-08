@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """starting point of our app
 """
-from flask import Flask
+from flask import Flask, make_response, jsonify
 from models import storage
 from api.v1.views import app_views
 from flask_cors import CORS
@@ -21,11 +21,8 @@ def teardown_db(exception):
 
 
 @app.errorhandler(404)
-def page_not_found(error):
-    """
-        Returns a JSON-formatted error response
-    """
-    return ({"error": "Not found"}), 404
+def not_found(error):
+    return make_response(jsonify({'error': "Not found"}), 404)
 
 
 if __name__ == '__main__':
