@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """starting point of our app
 """
 from flask import Flask
@@ -20,4 +20,4 @@ def teardown_db(exception):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run(host=host, port=port, threaded=True)
