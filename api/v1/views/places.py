@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''
+"""
     RESTful API actions for Place objects
-'''
+"""
 from flask import jsonify, abort, request
 from api.v1.views import app_views
 from models import storage
@@ -14,9 +14,9 @@ from models.user import User
                  methods=['GET'],
                  strict_slashes=False)
 def get_all_places(city_id):
-    '''
+    """
         Retrieve all Places from a certain City
-    '''
+    """
     city = storage.get('City', city_id)
     if not city:
         abort(404)
@@ -28,9 +28,9 @@ def get_all_places(city_id):
 
 @app_views.route('/places/<place_id>', methods=['GET'], strict_slashes=False)
 def get_place(place_id):
-    '''
+    """
         Retrieve one Place object
-    '''
+    """
     try:
         place = storage.get('Place', place_id)
         return jsonify(place.to_dict())
@@ -42,9 +42,9 @@ def get_place(place_id):
                  methods=['DELETE'],
                  strict_slashes=False)
 def delete_place(place_id):
-    '''
+    """
         Delete a Place object
-    '''
+    """
     try:
         place = storage.get('Place', place_id)
         storate.delete(place)
@@ -57,9 +57,9 @@ def delete_place(place_id):
                  methods=['POST'],
                  strict_slashes=False)
 def post_place(city_id):
-    '''
+    """
         Create a Place object
-    '''
+    """
     city = storage.get('City', city_id)
     if not city:
         abort(404)
@@ -83,9 +83,9 @@ def post_place(city_id):
 
 @app_views.route('/places/<place_id>', methods=['PUT'], strict_slashes=False)
 def put_place(place_id):
-    '''
+    """
         Update a Place object
-    '''
+    """
     place = storage.get('Place', place_id)
     if place is None:
         abort(404)
